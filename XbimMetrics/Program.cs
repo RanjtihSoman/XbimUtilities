@@ -6,6 +6,7 @@ using Xbim.Common.Logging;
 using Xbim.Ifc2x3.Extensions;
 using Xbim.Ifc2x3.GeometricModelResource;
 using Xbim.Ifc2x3.GeometryResource;
+using Xbim.Ifc2x3.IO;
 using Xbim.Ifc2x3.Kernel;
 using Xbim.Ifc2x3.ProductExtension;
 using Xbim.Ifc2x3.RepresentationResource;
@@ -31,7 +32,7 @@ namespace XbimMetrics
                 {
                     using (EventTrace eventTrace = LoggerFactory.CreateEventTrace())
                     {
-                        using (var model = new XbimModel())
+                        using (var model = new Xbim.Ifc2x3.IO.XbimModel())
                         {
                             model.CreateFrom(arguments.SourceModelName,null,null,true);
                             var m3D = new Xbim3DModelContext(model);

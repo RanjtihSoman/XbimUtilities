@@ -10,6 +10,7 @@ using Xbim.Ifc2x3.Kernel;
 using Xbim.Common.Exceptions;
 using Xbim.Common.Geometry;
 using Xbim.Ifc2x3.ProductExtension;
+using Xbim.Ifc2x3.IO;
 
 namespace XbimConvert
 {
@@ -63,7 +64,7 @@ namespace XbimConvert
                         }
                     };
                     watch.Start();
-                    using (XbimModel model = ParseModelFile(origFileName, xbimFileName, arguments.Caching))
+                    using (var model = ParseModelFile(origFileName, xbimFileName, arguments.Caching))
                     {
 
 
